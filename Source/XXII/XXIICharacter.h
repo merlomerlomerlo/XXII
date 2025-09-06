@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "TimerComponent.h"
 #include "XXIICharacter.generated.h"
 
 class USpringArmComponent;
@@ -12,12 +13,17 @@ class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
 
+UENUM(BlueprintType)
+enum class EComboState : uint8
+{
+	None UMETA(DisplayName = "None"),
+	Attack1 UMETA(DisplayName = "Attack1"),
+	Attack2 UMETA(DisplayName = "Attack2"),
+	Attack3 UMETA(DisplayName = "Attack3")
+};
+
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
-/**
- *  A simple player-controllable third person character
- *  Implements a controllable orbiting camera
- */
 UCLASS(abstract)
 class AXXIICharacter : public ACharacter
 {
@@ -49,6 +55,12 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* MouseLookAction;
 
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* SlashAction;
+
+	UPROPERTY(VisibleAnywhere, Category="Input")
+	bool NextAttackQueued = false;
+
 public:
 
 	/** Constructor */
@@ -56,6 +68,7 @@ public:
 
 protected:
 
+	virtual void Tick(float DeltaSeconds) override;
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -67,7 +80,55 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
+
 public:
+
+	void Slash(const FInputActionValue& Value);
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
+	UTimerComponent* AttackTimer;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
+	UTimerComponent* ComboTimer;
+
+	UFUNCTION()
+	void InitializeTimer(float Duration, float QueueStartTime, float QueueEndTime);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
+	bool AttackQueued;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
+	float Attack1Duration;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
+	float Attack2QueueStartTime;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
+	float Attack2QueueEndTime;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
+	float Attack2Duration;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
+	float Attack3QueueStartTime;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
+	float Attack3QueueEndTime;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
+	float Attack3Duration;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
+	EComboState ComboState = EComboState::None;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
+	bool isAttacking1 = false;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
+	bool isAttacking2 = false;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
+	bool isAttacking3 = false;
 
 	/** Handles move inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")
@@ -93,4 +154,3 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 };
-

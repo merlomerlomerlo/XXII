@@ -15,56 +15,76 @@
 AXXIICharacter::AXXIICharacter()
 {
 	// Set size for collision capsule
-	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
-		
-	// Don't rotate when the controller rotates. Let that just affect the camera.
-	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
-	bUseControllerRotationRoll = false;
-
-	// Configure character movement
-	GetCharacterMovement()->bOrientRotationToMovement = true;
-	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
-
-	// Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
-	// instead of recompiling to adjust them
-	GetCharacterMovement()->JumpZVelocity = 500.f;
-	GetCharacterMovement()->AirControl = 0.35f;
-	GetCharacterMovement()->MaxWalkSpeed = 500.f;
-	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
-	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
-	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
-
-	// Create a camera boom (pulls in towards the player if there is a collision)
-	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
-	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 400.0f;
-	CameraBoom->bUsePawnControlRotation = true;
-
-	// Create a follow camera
-	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
-	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
-	FollowCamera->bUsePawnControlRotation = false;
+	// GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
+	//
+	// // Don't rotate when the controller rotates. Let that just affect the camera.
+	// bUseControllerRotationPitch = false;
+	// bUseControllerRotationYaw = false;
+	// bUseControllerRotationRoll = false;
+	//
+	// // Configure character movement
+	// GetCharacterMovement()->bOrientRotationToMovement = true;
+	// GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
+	//
+	// // Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
+	// // instead of recompiling to adjust them
+	// GetCharacterMovement()->JumpZVelocity = 500.f;
+	// GetCharacterMovement()->AirControl = 0.35f;
+	// GetCharacterMovement()->MaxWalkSpeed = 500.f;
+	// GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
+	// GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
+	// GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
+	//
+	// // Create a camera boom (pulls in towards the player if there is a collision)
+	// CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
+	// CameraBoom->SetupAttachment(RootComponent);
+	// CameraBoom->TargetArmLength = 400.0f;
+	// CameraBoom->bUsePawnControlRotation = true;
+	//
+	// // Create a follow camera
+	// FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
+	// FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
+	// FollowCamera->bUsePawnControlRotation = false;
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+
+	AttackTimer = CreateDefaultSubobject<UTimerComponent>("AttackTimer");
+	ComboTimer = CreateDefaultSubobject<UTimerComponent>("ComboTimer");
+}
+
+void AXXIICharacter::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+
+	if (ComboState == EComboState::None) return;
+	
+	if (ComboTimer->TimerFinished && AttackQueued)
+	{
+		AttackQueued = false;
+		if (ComboState == EComboState::Attack1)
+		{
+			ComboState = EComboState::Attack2;
+			InitializeTimer(Attack2Duration, Attack3QueueStartTime, Attack3QueueEndTime);
+			AttackTimer->StartTimer();
+			
+		} else if (ComboState == EComboState::Attack2)
+		{
+			ComboState = EComboState::Attack3;
+			InitializeTimer(Attack3Duration, 0, 0);
+			AttackTimer->StartTimer();
+		}
+	}
+
+	if (AttackTimer->TimerFinished) ComboState = EComboState::None;
 }
 
 void AXXIICharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	// Set up action bindings
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
-		
-		// Jumping
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
-
-		// Moving
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AXXIICharacter::Move);
-		EnhancedInputComponent->BindAction(MouseLookAction, ETriggerEvent::Triggered, this, &AXXIICharacter::Look);
-
-		// Looking
-		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AXXIICharacter::Look);
+		EnhancedInputComponent->BindAction(SlashAction, ETriggerEvent::Started, this, &AXXIICharacter::Slash);
 	}
 	else
 	{
@@ -89,6 +109,42 @@ void AXXIICharacter::Look(const FInputActionValue& Value)
 	// route the input
 	DoLook(LookAxisVector.X, LookAxisVector.Y);
 }
+
+void AXXIICharacter::Slash(const FInputActionValue& Value)
+{
+	if (ComboState == EComboState::None)
+	{
+		InitializeTimer(Attack1Duration, Attack2QueueStartTime, Attack3QueueEndTime);
+		ComboState = EComboState::Attack1;
+		AttackTimer->StartTimer();
+		
+	} else if (ComboState == EComboState::Attack1 || ComboState == EComboState::Attack2)
+	{
+		if (ComboTimer->TimerStarted && !ComboTimer->TimerFinished)
+		{
+			AttackQueued = true;
+		}
+	}
+}
+
+void AXXIICharacter::InitializeTimer(float Duration, float QueueStartTime, float QueueEndTime)
+{
+	AttackTimer->StopTimer();
+	ComboTimer->StopTimer();
+	
+	AttackTimer->TimerDuration = Duration;
+	AttackTimer->SecondaryTimerDuration = QueueStartTime;
+
+	AttackTimer->OnTimerFinished.Clear();
+	AttackTimer->OnSecondaryTimerFinished.Clear();
+
+	AttackTimer->OnSecondaryTimerFinished.AddLambda([this, QueueStartTime, QueueEndTime]()
+	{
+		ComboTimer->TimerDuration = QueueEndTime - QueueStartTime;
+		ComboTimer->StartTimer();
+	});
+}
+
 
 void AXXIICharacter::DoMove(float Right, float Forward)
 {
