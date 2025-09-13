@@ -48,48 +48,24 @@ AXXIICharacter::AXXIICharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
-
-	AttackTimer = CreateDefaultSubobject<UTimerComponent>("AttackTimer");
-	ComboTimer = CreateDefaultSubobject<UTimerComponent>("ComboTimer");
 }
 
 void AXXIICharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-
-	if (ComboState == EComboState::None) return;
-	
-	if (ComboTimer->TimerFinished && AttackQueued)
-	{
-		AttackQueued = false;
-		if (ComboState == EComboState::Attack1)
-		{
-			ComboState = EComboState::Attack2;
-			InitializeTimer(Attack2Duration, Attack3QueueStartTime, Attack3QueueEndTime);
-			AttackTimer->StartTimer();
-			
-		} else if (ComboState == EComboState::Attack2)
-		{
-			ComboState = EComboState::Attack3;
-			InitializeTimer(Attack3Duration, 0, 0);
-			AttackTimer->StartTimer();
-		}
-	}
-
-	if (AttackTimer->TimerFinished) ComboState = EComboState::None;
 }
 
 void AXXIICharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	
-	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
-		EnhancedInputComponent->BindAction(SlashAction, ETriggerEvent::Started, this, &AXXIICharacter::Slash);
-	}
-	else
-	{
-		UE_LOG(LogXXII, Error, TEXT("'%s' Failed to find an Enhanced Input component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
-	}
+	// if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
+	// 	EnhancedInputComponent->BindAction(SlashAction, ETriggerEvent::Started, this, &AXXIICharacter::Slash);
+	// }
+	// else
+	// {
+	// 	UE_LOG(LogXXII, Error, TEXT("'%s' Failed to find an Enhanced Input component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
+	// }
 }
 
 void AXXIICharacter::Move(const FInputActionValue& Value)
@@ -110,40 +86,6 @@ void AXXIICharacter::Look(const FInputActionValue& Value)
 	DoLook(LookAxisVector.X, LookAxisVector.Y);
 }
 
-void AXXIICharacter::Slash(const FInputActionValue& Value)
-{
-	if (ComboState == EComboState::None)
-	{
-		InitializeTimer(Attack1Duration, Attack2QueueStartTime, Attack3QueueEndTime);
-		ComboState = EComboState::Attack1;
-		AttackTimer->StartTimer();
-		
-	} else if (ComboState == EComboState::Attack1 || ComboState == EComboState::Attack2)
-	{
-		if (ComboTimer->TimerStarted && !ComboTimer->TimerFinished)
-		{
-			AttackQueued = true;
-		}
-	}
-}
-
-void AXXIICharacter::InitializeTimer(float Duration, float QueueStartTime, float QueueEndTime)
-{
-	AttackTimer->StopTimer();
-	ComboTimer->StopTimer();
-	
-	AttackTimer->TimerDuration = Duration;
-	AttackTimer->SecondaryTimerDuration = QueueStartTime;
-
-	AttackTimer->OnTimerFinished.Clear();
-	AttackTimer->OnSecondaryTimerFinished.Clear();
-
-	AttackTimer->OnSecondaryTimerFinished.AddLambda([this, QueueStartTime, QueueEndTime]()
-	{
-		ComboTimer->TimerDuration = QueueEndTime - QueueStartTime;
-		ComboTimer->StartTimer();
-	});
-}
 
 
 void AXXIICharacter::DoMove(float Right, float Forward)

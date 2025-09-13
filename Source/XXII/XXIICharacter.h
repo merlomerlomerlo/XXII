@@ -84,51 +84,9 @@ protected:
 public:
 
 	void Slash(const FInputActionValue& Value);
-	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
-	UTimerComponent* AttackTimer;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
-	UTimerComponent* ComboTimer;
-
-	UFUNCTION()
-	void InitializeTimer(float Duration, float QueueStartTime, float QueueEndTime);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
 	bool AttackQueued;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
-	float Attack1Duration;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
-	float Attack2QueueStartTime;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
-	float Attack2QueueEndTime;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
-	float Attack2Duration;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
-	float Attack3QueueStartTime;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
-	float Attack3QueueEndTime;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
-	float Attack3Duration;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
-	EComboState ComboState = EComboState::None;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
-	bool isAttacking1 = false;
-	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
-	bool isAttacking2 = false;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Combo")
-	bool isAttacking3 = false;
 
 	/** Handles move inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")

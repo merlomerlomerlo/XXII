@@ -8,10 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/InwardSlash_UE.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/OutwardSlash_UE.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,32 +24,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="32KlC7uaPcrdIwKzqwsaBTi9PvL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Uproject.XXII.executor": "Run",
-    "git-widget-placeholder": "Code",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Uproject.XXII.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Code&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="XXII" type="Uproject" factoryName="rider.uproject">
       <configuration_1 setup="1">
@@ -133,7 +136,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757177016356</updated>
-      <workItem from="1757177016761" duration="6478000" />
+      <workItem from="1757177016761" duration="11778000" />
+      <workItem from="1757344070657" duration="5135000" />
+      <workItem from="1757420900053" duration="1251000" />
+      <workItem from="1757698424850" duration="596000" />
     </task>
     <servers />
   </component>
