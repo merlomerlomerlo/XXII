@@ -69,6 +69,7 @@ public:
 protected:
 
 	virtual void Tick(float DeltaSeconds) override;
+	virtual void BeginPlay() override;
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -80,10 +81,30 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
+	virtual void Landed(const FHitResult& Hit) override;
+	
+	UFUNCTION(BlueprintImplementableEvent, Category="Platforming")
+	void SetJumpTrailState(bool bEnabled);
+	
+	uint8 HasDashed : 1;
+	uint8 IsDashing : 1;
+
+	UPROPERTY(EditAnywhere, Category="Dash")
+	UAnimMontage* DashMontage;
+
+	FOnMontageEnded OnDashMontageEnded;
+
+	void DashMontageEnded(UAnimMontage* Montage, bool Interrupted);
 
 public:
 
 	void Slash(const FInputActionValue& Value);
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	void DoDash();
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	void EndDash();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")
 	bool AttackQueued;

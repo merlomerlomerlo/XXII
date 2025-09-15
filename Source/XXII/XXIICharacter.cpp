@@ -55,6 +55,12 @@ void AXXIICharacter::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 }
 
+void AXXIICharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	OnDashMontageEnded.BindUObject(this, &AXXIICharacter::DashMontageEnded);
+}
+
 void AXXIICharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -86,6 +92,13 @@ void AXXIICharacter::Look(const FInputActionValue& Value)
 	DoLook(LookAxisVector.X, LookAxisVector.Y);
 }
 
+void AXXIICharacter::Landed(const FHitResult& Hit)
+{
+	Super::Landed(Hit);
+
+	HasDashed = false;
+	SetJumpTrailState(false);
+}
 
 
 void AXXIICharacter::DoMove(float Right, float Forward)
@@ -128,4 +141,58 @@ void AXXIICharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
 	StopJumping();
+}
+
+void AXXIICharacter::DoDash()
+{
+	// ignore the input if we've already dashed and have yet to reset
+	if (HasDashed)
+		return;
+
+	// raise the dash flags
+	IsDashing = true;
+	HasDashed = true;
+
+	// disable gravity while dashing
+	GetCharacterMovement()->GravityScale = 0.0f;
+
+	// reset the character velocity so we don't carry momentum into the dash
+	GetCharacterMovement()->Velocity = FVector::ZeroVector;
+
+	// enable the jump trails
+	SetJumpTrailState(true);
+
+	// play the dash montage
+	if (UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance())
+	{
+		const float MontageLength = AnimInstance->Montage_Play(DashMontage, 1.0f, EMontagePlayReturnType::MontageLength, 0.0f, true);
+
+		// has the montage played successfully?
+		if (MontageLength > 0.0f)
+		{
+			AnimInstance->Montage_SetEndDelegate(OnDashMontageEnded, DashMontage);
+		}
+	}
+}
+
+void AXXIICharacter::EndDash()
+{
+	GetCharacterMovement()->GravityScale = 2.5f;
+
+	IsDashing = false;
+
+	// are we grounded after the dash?
+	if (GetCharacterMovement()->IsMovingOnGround())
+	{
+		// reset the dash usage flag, since we won't receive a landed event
+		HasDashed = false;
+
+		// deactivate the jump trails
+		SetJumpTrailState(false);
+	}
+}
+
+void AXXIICharacter::DashMontageEnded(UAnimMontage* Montage, bool Interrupted)
+{
+	EndDash();
 }
