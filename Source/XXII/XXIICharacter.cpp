@@ -196,3 +196,22 @@ void AXXIICharacter::DashMontageEnded(UAnimMontage* Montage, bool Interrupted)
 {
 	EndDash();
 }
+
+void AXXIICharacter::StartAiming()
+{
+	TempCharacterSpeed = GetCharacterMovement()->MaxWalkSpeed;
+	GetCharacterMovement()->MaxWalkSpeed = 0;
+	IsAiming = true;
+}
+
+void AXXIICharacter::StopAiming()
+{
+	GetCharacterMovement()->MaxWalkSpeed = TempCharacterSpeed;
+	IsAiming = false;
+	IsShooting = false;
+}
+
+void AXXIICharacter::Shoot()
+{
+	IsShooting = true;
+}

@@ -64,7 +64,7 @@ protected:
 public:
 
 	/** Constructor */
-	AXXIICharacter();	
+	AXXIICharacter();
 
 protected:
 
@@ -98,7 +98,22 @@ protected:
 
 public:
 
-	void Slash(const FInputActionValue& Value);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement")
+	bool IsAiming = false;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement")
+	bool IsShooting = false;
+	
+	float TempCharacterSpeed;
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	void StartAiming();
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	void StopAiming();
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	void Shoot();
 
 	UFUNCTION(BlueprintCallable, Category="Input")
 	void DoDash();
