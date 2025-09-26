@@ -87,7 +87,6 @@ protected:
 	void SetJumpTrailState(bool bEnabled);
 	
 	uint8 HasDashed : 1;
-	uint8 IsDashing : 1;
 
 	UPROPERTY(EditAnywhere, Category="Dash")
 	UAnimMontage* DashMontage;
@@ -103,6 +102,15 @@ public:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement")
 	bool IsShooting = false;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement")
+	bool IsDashing = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement")
+	bool IsMoving = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement")
+	bool IsAttacking = false;
 	
 	float TempCharacterSpeed;
 

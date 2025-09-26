@@ -8,10 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_Aim.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Variant_Platforming/Input/Actions/IA_Shoot.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Variant_Platforming/Input/IMC_Platforming.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Variant_Platforming/Input/IMC_Platforming.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/ComboMontage.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
@@ -148,7 +146,7 @@
       <workItem from="1758099393093" duration="5325000" />
       <workItem from="1758294140902" duration="1677000" />
       <workItem from="1758718133374" duration="1667000" />
-      <workItem from="1758808993339" duration="1458000" />
+      <workItem from="1758808993339" duration="7666000" />
     </task>
     <servers />
   </component>

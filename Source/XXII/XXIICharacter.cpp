@@ -112,10 +112,10 @@ void AXXIICharacter::DoMove(float Right, float Forward)
 		// get forward vector
 		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 
-		// get right vector 
+		// get right vector
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
-		// add movement 
+		// add movement
 		AddMovementInput(ForwardDirection, Forward);
 		AddMovementInput(RightDirection, Right);
 	}
@@ -178,7 +178,7 @@ void AXXIICharacter::DoDash()
 void AXXIICharacter::EndDash()
 {
 	GetCharacterMovement()->GravityScale = 2.5f;
-
+	
 	IsDashing = false;
 
 	// are we grounded after the dash?
