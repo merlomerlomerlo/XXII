@@ -9,9 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/ComboMontage.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" afterDir="false" />
     </list>
@@ -28,6 +26,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
@@ -129,6 +128,14 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration default="true" type="Uproject" factoryName="rider.uproject">
+      <option name="DEFAULT_PROJECT_PATH" value="" />
+      <option name="PROJECT_FILE_PATH" value="" />
+      <option name="AUTO_SELECT_PRIORITY" value="0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -146,7 +153,8 @@
       <workItem from="1758099393093" duration="5325000" />
       <workItem from="1758294140902" duration="1677000" />
       <workItem from="1758718133374" duration="1667000" />
-      <workItem from="1758808993339" duration="7666000" />
+      <workItem from="1758808993339" duration="7713000" />
+      <workItem from="1759424183216" duration="4186000" />
     </task>
     <servers />
   </component>

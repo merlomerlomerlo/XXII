@@ -46,8 +46,8 @@ AXXIICharacter::AXXIICharacter()
 	// FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	// FollowCamera->bUsePawnControlRotation = false;
 
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
-	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+	CombatComponent = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
+	CombatComponent->RegisterComponent();
 }
 
 void AXXIICharacter::Tick(float DeltaSeconds)
@@ -195,23 +195,4 @@ void AXXIICharacter::EndDash()
 void AXXIICharacter::DashMontageEnded(UAnimMontage* Montage, bool Interrupted)
 {
 	EndDash();
-}
-
-void AXXIICharacter::StartAiming()
-{
-	TempCharacterSpeed = GetCharacterMovement()->MaxWalkSpeed;
-	GetCharacterMovement()->MaxWalkSpeed = 0;
-	IsAiming = true;
-}
-
-void AXXIICharacter::StopAiming()
-{
-	GetCharacterMovement()->MaxWalkSpeed = TempCharacterSpeed;
-	IsAiming = false;
-	IsShooting = false;
-}
-
-void AXXIICharacter::Shoot()
-{
-	IsShooting = true;
 }
