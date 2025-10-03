@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CombatComponent.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "TimerComponent.h"
@@ -12,15 +13,6 @@ class USpringArmComponent;
 class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
-
-UENUM(BlueprintType)
-enum class EComboState : uint8
-{
-	None UMETA(DisplayName = "None"),
-	Attack1 UMETA(DisplayName = "Attack1"),
-	Attack2 UMETA(DisplayName = "Attack2"),
-	Attack3 UMETA(DisplayName = "Attack3")
-};
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -96,32 +88,16 @@ protected:
 	void DashMontageEnded(UAnimMontage* Montage, bool Interrupted);
 
 public:
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement")
-	bool IsAiming = false;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement")
-	bool IsShooting = false;
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement")
 	bool IsDashing = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement")
 	bool IsMoving = false;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement")
-	bool IsAttacking = false;
 	
-	float TempCharacterSpeed;
-
-	UFUNCTION(BlueprintCallable, Category="Input")
-	void StartAiming();
-
-	UFUNCTION(BlueprintCallable, Category="Input")
-	void StopAiming();
-
-	UFUNCTION(BlueprintCallable, Category="Input")
-	void Shoot();
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat")
+	UCombatComponent* CombatComponent;
+	
 
 	UFUNCTION(BlueprintCallable, Category="Input")
 	void DoDash();
