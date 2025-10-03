@@ -9,9 +9,13 @@
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Anims/Unarmed/Jump/MM_Dash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Anims/Unarmed/Jump/MM_Dash.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/Montages/ChargedAttackMontage.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Meshes/Weapons/Projectile.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Meshes/Weapons/Projectile.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/Private/Projectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Private/Projectile.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,14 +132,6 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration default="true" type="Uproject" factoryName="rider.uproject">
-      <option name="DEFAULT_PROJECT_PATH" value="" />
-      <option name="PROJECT_FILE_PATH" value="" />
-      <option name="AUTO_SELECT_PRIORITY" value="0" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -155,6 +151,7 @@
       <workItem from="1758718133374" duration="1667000" />
       <workItem from="1758808993339" duration="7713000" />
       <workItem from="1759424183216" duration="4186000" />
+      <workItem from="1759485393206" duration="3151000" />
     </task>
     <servers />
   </component>
