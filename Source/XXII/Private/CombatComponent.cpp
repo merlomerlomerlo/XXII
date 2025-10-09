@@ -63,7 +63,7 @@ void UCombatComponent::Shoot()
 
 void UCombatComponent::Handle_ShootProjectile()
 {
-	FVector SpawnLocation = Owner->GetActorLocation(); 
+	FVector SpawnLocation = Owner->GetActorLocation();
 	FVector Forward = Owner->GetActorForwardVector();
 	
 	if (AProjectile* Projectile = GetWorld()->SpawnActor<AProjectile>(AProjectile::StaticClass()))
@@ -74,7 +74,6 @@ void UCombatComponent::Handle_ShootProjectile()
 
 void UCombatComponent::StartSlash()
 {
-
 	if (!Owner || !AnimInstance) return;
 
 	if (ComboState == EComboState::None)
@@ -85,10 +84,13 @@ void UCombatComponent::StartSlash()
 			ComboState = EComboState::Attack1;
 			AnimInstance->Montage_SetEndDelegate(OnSlashMontageEnded, SlashMontage);
 		}
-	} else if (ComboState == EComboState::Attack1) {
+	}
+	else if (ComboState == EComboState::Attack1)
+	{
 		ComboState = EComboState::Attack2;
 		AnimInstance->Montage_JumpToSection(Attack2SectionName, SlashMontage);
-	} else if (ComboState == EComboState::Attack2)
+	}
+	else if (ComboState == EComboState::Attack2)
 	{
 		ComboState = EComboState::Attack3;
 		AnimInstance->Montage_JumpToSection(Attack3SectionName, SlashMontage);
