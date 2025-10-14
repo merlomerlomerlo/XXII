@@ -88,6 +88,9 @@ protected:
 	void DashMontageEnded(UAnimMontage* Montage, bool Interrupted);
 
 public:
+
+	UPROPERTY(EditAnywhere, Category="Dash")
+	bool RotateBeforeDash = false;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement")
 	bool IsDashing = false;

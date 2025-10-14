@@ -149,6 +149,12 @@ void AXXIICharacter::DoDash()
 	if (HasDashed)
 		return;
 
+	// Rotate towards the input to orient the dash in the input direction
+	if (RotateBeforeDash)
+	{
+		SetActorRotation(GetPendingMovementInputVector().ToOrientationRotator());
+	}
+	
 	// raise the dash flags
 	IsDashing = true;
 	HasDashed = true;
