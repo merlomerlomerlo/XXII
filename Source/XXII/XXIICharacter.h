@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "CombatComponent.h"
+#include "StatInterface.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "TimerComponent.h"
@@ -17,7 +18,7 @@ struct FInputActionValue;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(abstract)
-class AXXIICharacter : public ACharacter
+class AXXIICharacter : public ACharacter, public IStatInterface
 {
 	GENERATED_BODY()
 

@@ -8,13 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/Montages/ComboMontage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Anims/Montages/ComboMontage.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/Montages/DashMontage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Anims/Montages/DashMontage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BPI_SaveGame.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BPI_SaveGame.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameInstance.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameInstance.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIHUD.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Extra/BPFL_ExtraFunctions.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Extra/BPFL_ExtraFunctions.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Core/SaveGame/BP_XXIISaveGame.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/SaveGame/BP_XXIISaveGame.uasset" afterDir="false" />
@@ -22,9 +23,12 @@
       <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/BPI_StatInterface.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Stat/BPI_StatInterface.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_StatComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_StatComponent.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/FPlayerStat.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/SL_ArenaMagician_Blueprints.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/SL_ArenaMagician_Blueprints.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/SaveGame/BP_Checkpoint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/SaveGame/BP_Checkpoint.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/UI/Buttons/WBP_BaseButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/UI/Buttons/WBP_BaseButton.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/UI/WBP_BaseUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/UI/WBP_BaseUI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +42,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/Animation/AnimInstance.h" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
@@ -53,21 +57,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Uproject.XXII.executor": "Run",
-    "git-widget-placeholder": "Code",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Uproject.XXII.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Code&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="XXII" type="Uproject" factoryName="rider.uproject">
       <configuration_1 setup="1">
@@ -162,13 +167,22 @@
       <workItem from="1758808993339" duration="7713000" />
       <workItem from="1759424183216" duration="4186000" />
       <workItem from="1759485393206" duration="3151000" />
-      <workItem from="1759926269678" duration="744000" />
+      <workItem from="1759926269678" duration="1083000" />
+      <workItem from="1759928592580" duration="1635000" />
+      <workItem from="1759931251922" duration="6250000" />
+      <workItem from="1760015084187" duration="901000" />
+      <workItem from="1760085941491" duration="12000" />
+      <workItem from="1760086166241" duration="1245000" />
+      <workItem from="1760090600143" duration="359000" />
+      <workItem from="1760090983012" duration="8277000" />
+      <workItem from="1760963170926" duration="3323000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

@@ -2,10 +2,10 @@
 
 
 #include "CombatComponent.h"
-
 #include "Projectile.h"
 #include "XXIICharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "StatInterface.h"
 
 // Sets default values for this component's properties
 UCombatComponent::UCombatComponent()
@@ -100,11 +100,17 @@ void UCombatComponent::StartSlash()
 
 void UCombatComponent::QueueAttack()
 {
+	if (GetOwner()->GetClass()->ImplementsInterface(UStatInterface::StaticClass()))
+	{
+		CanQueueAttack = (IStatInterface::Execute_GetStat(GetOwner()).Stamina > 0);
+	}
+	
 	if (CanQueueAttack)
 	{
 		AttackPressed = true;
 		if (ComboState == EComboState::None) StartSlash();
 		else AttackQueued = true;
+		CanQueueAttack = false;
 	}
 }
 
@@ -127,6 +133,11 @@ void UCombatComponent::Handle_ComboWindowStart()
 
 void UCombatComponent::Handle_ComboWindowEnd()
 {
+	if (GetOwner()->GetClass()->ImplementsInterface(UStatInterface::StaticClass()))
+	{
+		AttackQueued = AttackQueued && (IStatInterface::Execute_GetStat(GetOwner()).Stamina > 0);
+	}
+	
 	if (AttackQueued) StartSlash();
 	AttackQueued = false;
 	CanQueueAttack = false;
