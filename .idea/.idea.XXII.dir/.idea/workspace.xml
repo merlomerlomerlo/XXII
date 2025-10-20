@@ -7,29 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/Montages/ComboMontage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Anims/Montages/ComboMontage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/Montages/DashMontage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Anims/Montages/DashMontage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_BaseCharacter.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_BaseCharacter.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BPI_SaveGame.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BPI_SaveGame.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameInstance.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameInstance.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIHUD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Extra/BPFL_ExtraFunctions.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Extra/BPFL_ExtraFunctions.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/SaveGame/BP_XXIISaveGame.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/SaveGame/BP_XXIISaveGame.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/SaveGame/FPlayerSave.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/SaveGame/FPlayerSave.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/BPI_StatInterface.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Stat/BPI_StatInterface.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_StatComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_StatComponent.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/FPlayerStat.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/SL_ArenaMagician_Blueprints.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/SL_ArenaMagician_Blueprints.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/SaveGame/BP_Checkpoint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/SaveGame/BP_Checkpoint.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/UI/Buttons/WBP_BaseButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/UI/Buttons/WBP_BaseButton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/UI/WBP_BaseUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/UI/WBP_BaseUI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" afterDir="false" />
-    </list>
+    <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,6 +154,7 @@
       <workItem from="1760090600143" duration="359000" />
       <workItem from="1760090983012" duration="8277000" />
       <workItem from="1760963170926" duration="3323000" />
+      <workItem from="1760967749900" duration="232000" />
     </task>
     <servers />
   </component>
