@@ -58,6 +58,7 @@ void AXXIICharacter::Tick(float DeltaSeconds)
 void AXXIICharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	
 	OnDashMontageEnded.BindUObject(this, &AXXIICharacter::DashMontageEnded);
 }
 
@@ -176,7 +177,8 @@ void AXXIICharacter::DoDash()
 		// has the montage played successfully?
 		if (MontageLength > 0.0f)
 		{
-			AnimInstance->Montage_SetEndDelegate(OnDashMontageEnded, DashMontage);
+			//AnimInstance->Montage_SetEndDelegate(OnDashMontageEnded, DashMontage);
+			AnimInstance->Montage_SetBlendingOutDelegate(OnDashMontageEnded, DashMontage);
 		}
 	}
 }
