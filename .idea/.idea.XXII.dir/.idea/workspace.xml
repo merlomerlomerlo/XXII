@@ -7,7 +7,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="" />
+    <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Anims/Unarmed/Jump/MM_Dash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Anims/Unarmed/Jump/MM_Dash.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Variant_Combat/Anims/AM_ComboAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Variant_Combat/Anims/AM_ComboAttack.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Variant_Platforming/Input/IMC_Platforming.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Variant_Platforming/Input/IMC_Platforming.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_Player.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_Player.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_StatComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_StatComponent.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_Gameplay1.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_Gameplay1.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_P.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_Gameplay1.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_Gameplay1.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_P.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Meshes/Weapons/Papercutter/BP_Papercutter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Meshes/Weapons/Papercutter/BP_Papercutter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,6 +171,9 @@
       <workItem from="1760090983012" duration="8277000" />
       <workItem from="1760963170926" duration="3323000" />
       <workItem from="1760967749900" duration="232000" />
+      <workItem from="1760972402000" duration="1374000" />
+      <workItem from="1761054297659" duration="2096000" />
+      <workItem from="1761124388307" duration="2203000" />
     </task>
     <servers />
   </component>
