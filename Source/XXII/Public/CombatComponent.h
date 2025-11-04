@@ -31,6 +31,17 @@ public:
 	UPROPERTY()
 	UAnimInstance* AnimInstance;
 
+	// STATS
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Stats")
+	float DamageLight;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Stats")
+	float DamageCharged;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Stats")
+	float DamageShoot;
+
 	// SHOOTING
 
 	UFUNCTION(BlueprintCallable, Category="Shoot")

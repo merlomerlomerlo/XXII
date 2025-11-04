@@ -9,20 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Anims/Unarmed/Jump/MM_Dash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Anims/Unarmed/Jump/MM_Dash.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Variant_Combat/Anims/AM_ComboAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Variant_Combat/Anims/AM_ComboAttack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Variant_Platforming/Input/IMC_Platforming.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Variant_Platforming/Input/IMC_Platforming.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/ABP_Player.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/BaseCharacter/BP_Player.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_StatComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_StatComponent.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_Gameplay1.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_Gameplay1.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_P.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_Gameplay1.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_Gameplay1.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_P.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Anims/Montages/ComboMontage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Anims/Montages/ComboMontage.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Meshes/Weapons/Papercutter/BP_Papercutter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Meshes/Weapons/Papercutter/BP_Papercutter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/Public/CombatComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Public/CombatComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XXII.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/XXII.uproject" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +28,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://D:/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/Animation/AnimInstance.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/XXII/Public/CombatComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/XXII/Public/StatInterface.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/XXII/XXIICharacter.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -73,10 +67,10 @@
         <option name="CONFIGURATION" value="DebugGame Editor" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="D:/Epic Games/UE_5.6/Engine/Binaries/Win64/UnrealEditor-Win64-DebugGame.exe" />
-        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;E:\GitRepo\XXII\XXII.uproject&quot;" />
+        <option name="EXECUTABLE_PATH" value="C:\Program Files\Epic Games\UE_5.6\Engine\Binaries\Win64\UnrealEditor-Win64-DebugGame.exe" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Users\lucio\Documents\Unreal Projects\XXII\XXII.uproject&quot;" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
-        <option name="WORKING_DIRECTORY" value="D:\Epic Games\UE_5.6" />
+        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="1" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="FORCE_CONSOLE" />
@@ -86,10 +80,10 @@
         <option name="CONFIGURATION" value="DebugGame" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="$PROJECT_DIR$/Binaries/Win64/XXII-Win64-DebugGame.exe" />
+        <option name="EXECUTABLE_PATH" value="C:\Users\lucio\Documents\Unreal Projects\XXII\Binaries\Win64\XXII-Win64-DebugGame.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
-        <option name="WORKING_DIRECTORY" value="D:\Epic Games\UE_5.6" />
+        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="1" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="FORCE_CONSOLE" />
@@ -99,10 +93,10 @@
         <option name="CONFIGURATION" value="Development Editor" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="D:/Epic Games/UE_5.6/Engine/Binaries/Win64/UnrealEditor.exe" />
-        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;E:\GitRepo\XXII\XXII.uproject&quot;" />
+        <option name="EXECUTABLE_PATH" value="C:\Program Files\Epic Games\UE_5.6\Engine\Binaries\Win64\UnrealEditor.exe" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Users\lucio\Documents\Unreal Projects\XXII\XXII.uproject&quot;" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
-        <option name="WORKING_DIRECTORY" value="D:\Epic Games\UE_5.6" />
+        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="1" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="FORCE_CONSOLE" />
@@ -112,10 +106,10 @@
         <option name="CONFIGURATION" value="Development" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="$PROJECT_DIR$/Binaries/Win64/XXII.exe" />
+        <option name="EXECUTABLE_PATH" value="C:\Users\lucio\Documents\Unreal Projects\XXII\Binaries\Win64\XXII.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
-        <option name="WORKING_DIRECTORY" value="D:\Epic Games\UE_5.6" />
+        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="1" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="FORCE_CONSOLE" />
@@ -125,10 +119,10 @@
         <option name="CONFIGURATION" value="Shipping" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="$PROJECT_DIR$/Binaries/Win64/XXII-Win64-Shipping.exe" />
+        <option name="EXECUTABLE_PATH" value="C:\Users\lucio\Documents\Unreal Projects\XXII\Binaries\Win64\XXII-Win64-Shipping.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
-        <option name="WORKING_DIRECTORY" value="D:\Epic Games\UE_5.6" />
+        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="1" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="FORCE_CONSOLE" />
@@ -174,6 +168,8 @@
       <workItem from="1760972402000" duration="1374000" />
       <workItem from="1761054297659" duration="2096000" />
       <workItem from="1761124388307" duration="2203000" />
+      <workItem from="1762171613882" duration="3938000" />
+      <workItem from="1762201213910" duration="1956000" />
     </task>
     <servers />
   </component>
@@ -184,23 +180,5 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

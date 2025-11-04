@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "CombatComponent.h"
+#include "HitboxInterface.h"
 #include "StatInterface.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
-#include "TimerComponent.h"
 #include "XXIICharacter.generated.h"
 
 class USpringArmComponent;
@@ -18,7 +18,7 @@ struct FInputActionValue;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(abstract)
-class AXXIICharacter : public ACharacter, public IStatInterface
+class AXXIICharacter : public ACharacter, public IStatInterface, public IHitboxInterface
 {
 	GENERATED_BODY()
 
@@ -101,7 +101,6 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat")
 	UCombatComponent* CombatComponent;
-	
 
 	UFUNCTION(BlueprintCallable, Category="Input")
 	void DoDash();
