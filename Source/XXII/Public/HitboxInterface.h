@@ -23,4 +23,3 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Hitbox")
 	void TraceHitbox();
 };
-

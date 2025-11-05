@@ -48,6 +48,14 @@ AXXIICharacter::AXXIICharacter()
 
 	CombatComponent = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
 	CombatComponent->RegisterComponent();
+
+	PapercutterComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("SkeletalChild"));
+	PapercutterComponent->SetupAttachment(GetMesh());
+
+	if (APapercutter* PapercutterRef = Cast<APapercutter>(PapercutterComponent->GetChildActor()))
+	{
+		Papercutter = PapercutterRef;
+	}
 }
 
 void AXXIICharacter::Tick(float DeltaSeconds)
