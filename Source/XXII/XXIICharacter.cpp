@@ -50,7 +50,7 @@ AXXIICharacter::AXXIICharacter()
 	CombatComponent->RegisterComponent();
 
 	PapercutterComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("SkeletalChild"));
-	PapercutterComponent->SetupAttachment(GetMesh());
+	PapercutterComponent->SetupAttachment(GetMesh(), TEXT("R_hand_ctrl"));
 
 	if (APapercutter* PapercutterRef = Cast<APapercutter>(PapercutterComponent->GetChildActor()))
 	{
