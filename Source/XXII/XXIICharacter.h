@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "CombatComponent.h"
 #include "HitboxInterface.h"
-#include "Papercutter.h"
 #include "StatInterface.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
@@ -30,12 +29,6 @@ class AXXIICharacter : public ACharacter, public IStatInterface, public IHitboxI
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Components", meta = (AllowPrivateAccess = "true"))
-	UChildActorComponent* PapercutterComponent;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Components", meta = (AllowPrivateAccess = "true"))
-	APapercutter* Papercutter;
 	
 protected:
 
