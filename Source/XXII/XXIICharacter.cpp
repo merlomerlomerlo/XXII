@@ -48,15 +48,9 @@ AXXIICharacter::AXXIICharacter()
 
 	CombatComponent = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
 	CombatComponent->RegisterComponent();
-
-	PapercutterComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("SkeletalChild"));
-	PapercutterComponent->SetupAttachment(GetMesh(), TEXT("R_hand_ctrl"));
-
-	if (APapercutter* PapercutterRef = Cast<APapercutter>(PapercutterComponent->GetChildActor()))
-	{
-		Papercutter = PapercutterRef;
-	}
+	
 }
+
 
 void AXXIICharacter::Tick(float DeltaSeconds)
 {
@@ -66,6 +60,9 @@ void AXXIICharacter::Tick(float DeltaSeconds)
 void AXXIICharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	
+	
 	
 	OnDashMontageEnded.BindUObject(this, &AXXIICharacter::DashMontageEnded);
 }
