@@ -60,7 +60,7 @@ void AXXIICharacter::Tick(float DeltaSeconds)
 
 	if (IsDashing)
 	{
-		SetActorLocation(GetActorLocation() + DashDistance * (DeltaSeconds / DashTime) * GetActorForwardVector());
+		SetActorLocation(GetActorLocation() + DashDistance * (DeltaSeconds / DashTime) * GetActorForwardVector(), true);
 	}
 }
 
@@ -163,7 +163,6 @@ void AXXIICharacter::DoDash()
 	}
 	
 	IsDashing = true;
-
 
 	GetCharacterMovement()->GravityScale = 0.0f;
 	GetCharacterMovement()->Velocity = FVector::ZeroVector;
