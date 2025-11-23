@@ -48,23 +48,31 @@ AXXIICharacter::AXXIICharacter()
 
 	CombatComponent = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
 	CombatComponent->RegisterComponent();
-	
+
+	DashTimer = CreateDefaultSubobject<UTimerComponent>(TEXT("DashTimer"));
+	DashTimer->RegisterComponent();
 }
 
 
 void AXXIICharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+
+	if (IsDashing)
+	{
+		SetActorLocation(GetActorLocation() + DashDistance * (DeltaSeconds / DashTime) * GetActorForwardVector());
+	}
 }
 
 void AXXIICharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	
-	
-	
-	OnDashMontageEnded.BindUObject(this, &AXXIICharacter::DashMontageEnded);
+	DashTimer->TimerDuration = DashTime;
+	DashTimer->OnTimerFinished.AddLambda([this]()
+	{
+		this->EndDash();
+	});
 }
 
 void AXXIICharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -101,9 +109,6 @@ void AXXIICharacter::Look(const FInputActionValue& Value)
 void AXXIICharacter::Landed(const FHitResult& Hit)
 {
 	Super::Landed(Hit);
-
-	HasDashed = false;
-	SetJumpTrailState(false);
 }
 
 
@@ -151,41 +156,19 @@ void AXXIICharacter::DoJumpEnd()
 
 void AXXIICharacter::DoDash()
 {
-	// ignore the input if we've already dashed and have yet to reset
-	if (HasDashed)
-		return;
-
 	// Rotate towards the input to orient the dash in the input direction
 	if (RotateBeforeDash)
 	{
 		SetActorRotation(GetPendingMovementInputVector().ToOrientationRotator());
 	}
 	
-	// raise the dash flags
 	IsDashing = true;
-	HasDashed = true;
 
-	// disable gravity while dashing
+
 	GetCharacterMovement()->GravityScale = 0.0f;
-
-	// reset the character velocity so we don't carry momentum into the dash
 	GetCharacterMovement()->Velocity = FVector::ZeroVector;
 
-	// enable the jump trails
-	SetJumpTrailState(true);
-
-	// play the dash montage
-	if (UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance())
-	{
-		const float MontageLength = AnimInstance->Montage_Play(DashMontage, 1.0f, EMontagePlayReturnType::MontageLength, 0.0f, true);
-
-		// has the montage played successfully?
-		if (MontageLength > 0.0f)
-		{
-			//AnimInstance->Montage_SetEndDelegate(OnDashMontageEnded, DashMontage);
-			AnimInstance->Montage_SetBlendingOutDelegate(OnDashMontageEnded, DashMontage);
-		}
-	}
+	DashTimer->StartTimer();
 }
 
 void AXXIICharacter::EndDash()
@@ -193,19 +176,4 @@ void AXXIICharacter::EndDash()
 	GetCharacterMovement()->GravityScale = 2.5f;
 	
 	IsDashing = false;
-
-	// are we grounded after the dash?
-	if (GetCharacterMovement()->IsMovingOnGround())
-	{
-		// reset the dash usage flag, since we won't receive a landed event
-		HasDashed = false;
-
-		// deactivate the jump trails
-		SetJumpTrailState(false);
-	}
-}
-
-void AXXIICharacter::DashMontageEnded(UAnimMontage* Montage, bool Interrupted)
-{
-	EndDash();
 }
