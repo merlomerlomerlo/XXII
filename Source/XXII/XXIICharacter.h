@@ -75,21 +75,16 @@ protected:
 	void Look(const FInputActionValue& Value);
 
 	virtual void Landed(const FHitResult& Hit) override;
-	
-	UFUNCTION(BlueprintImplementableEvent, Category="Platforming")
-	void SetJumpTrailState(bool bEnabled);
-	
-	uint8 HasDashed : 1;
 
-	UPROPERTY(EditAnywhere, Category="Dash")
-	UAnimMontage* DashMontage;
-
-	FOnMontageEnded OnDashMontageEnded;
-
-	void DashMontageEnded(UAnimMontage* Montage, bool Interrupted);
-
+	UPROPERTY()
+	UTimerComponent* DashTimer;
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Dash")
+	float DashDistance;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Dash")
+	float DashTime;
+	
 	UPROPERTY(EditAnywhere, Category="Dash")
 	bool RotateBeforeDash = false;
 	
