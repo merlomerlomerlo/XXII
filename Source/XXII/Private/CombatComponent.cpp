@@ -31,8 +31,6 @@ void UCombatComponent::BeginPlay()
 			AnimInstance = MeshComp->GetAnimInstance();
 		}
 	}
-	
-	OnSlashMontageEnded.BindUObject(this, &UCombatComponent::SlashMontageEnded);
 }
 
 
@@ -72,58 +70,34 @@ void UCombatComponent::Handle_ShootProjectile()
 	}
 }
 
-void UCombatComponent::StartSlash()
-{
-	if (!Owner || !AnimInstance) return;
-
-	if (ComboState == EComboState::None)
-	{
-		const float MontageLength = AnimInstance->Montage_Play(SlashMontage, 1.0f, EMontagePlayReturnType::MontageLength, 0.0f, true);
-		if (MontageLength > 0.0f)
-		{
-			ComboState = EComboState::Attack1;
-			AnimInstance->Montage_SetEndDelegate(OnSlashMontageEnded, SlashMontage);
-		}
-	}
-	else if (ComboState == EComboState::Attack1)
-	{
-		ComboState = EComboState::Attack2;
-		AnimInstance->Montage_JumpToSection(Attack2SectionName, SlashMontage);
-	}
-	else if (ComboState == EComboState::Attack2)
-	{
-		ComboState = EComboState::Attack3;
-		AnimInstance->Montage_JumpToSection(Attack3SectionName, SlashMontage);
-	}
-	if (AttackPressed) AnimInstance->Montage_Pause(SlashMontage);
-}
-
 void UCombatComponent::QueueAttack()
 {
+	if (!CanQueueAttack) return;
+	
 	if (GetOwner()->GetClass()->ImplementsInterface(UStatInterface::StaticClass()))
 	{
 		CanQueueAttack = (IStatInterface::Execute_GetStat(GetOwner()).Stamina > 0);
 	}
 	
-	if (CanQueueAttack)
+	if (!CanQueueAttack) return;
+	
+	AttackPressed = true;
+	AttackQueued = true;
+	if (ComboState == EComboState::None)
 	{
-		AttackPressed = true;
-		if (ComboState == EComboState::None) StartSlash();
-		else AttackQueued = true;
-		CanQueueAttack = false;
+		ComboState = EComboState::Attack1;
 	}
+	CanQueueAttack = false;
 }
 
 void UCombatComponent::ReleaseAttack()
 {
 	AttackPressed = false;
-	AnimInstance->Montage_Resume(SlashMontage);
 }
 
-void UCombatComponent::SlashMontageEnded(UAnimMontage* Montage, bool Interrupted)
+void UCombatComponent::ConsumeQueuedAttack()
 {
-	CanQueueAttack = true;
-	ComboState = EComboState::None;
+	AttackQueued = false;
 }
 
 void UCombatComponent::Handle_ComboWindowStart()
@@ -138,9 +112,38 @@ void UCombatComponent::Handle_ComboWindowEnd()
 		AttackQueued = AttackQueued && (IStatInterface::Execute_GetStat(GetOwner()).Stamina > 0);
 	}
 	
-	if (AttackQueued) StartSlash();
-	AttackQueued = false;
-	CanQueueAttack = false;
+	
+	if (!AttackQueued || ComboState == EComboState::Attack3)
+	{
+		ComboState = EComboState::None;
+		CanQueueAttack = true;
+		return;
+	}
+	
+	ConsumeQueuedAttack();
+	if (AttackPressed)
+	{
+		if (ComboState == EComboState::Attack1)
+		{
+			ComboState = EComboState::Attack2ChargedWindup;
+		}
+		else if (ComboState == EComboState::Attack2)
+		{
+			ComboState = EComboState::Attack3ChargedWindup;
+		}
+	}
+	else
+	{
+		if (ComboState == EComboState::Attack1)
+		{
+			ComboState = EComboState::Attack2;
+		}
+		else if (ComboState == EComboState::Attack2)
+		{
+			ComboState = EComboState::Attack3;
+		}
+	}
+	
 }
 
 void UCombatComponent::Handle_HeavyAttackWindowEnd()

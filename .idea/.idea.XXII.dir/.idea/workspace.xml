@@ -9,8 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/ABP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/ABP_Player.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/Animations/XXII_Zero_Attack_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/Animations/XXII_Zero_Attack_01.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/Public/CombatComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Public/CombatComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +170,7 @@
       <workItem from="1762171613882" duration="3938000" />
       <workItem from="1762201213910" duration="1956000" />
       <workItem from="1762344743564" duration="330000" />
+      <workItem from="1764080950506" duration="4679000" />
     </task>
     <servers />
   </component>

@@ -13,7 +13,13 @@ enum class EComboState : uint8
 	None UMETA(DisplayName = "None"),
 	Attack1 UMETA(DisplayName = "Attack1"),
 	Attack2 UMETA(DisplayName = "Attack2"),
-	Attack3 UMETA(DisplayName = "Attack3")
+	Attack2ChargedWindup UMETA(DisplayName = "Attack2ChargedWindup"),
+	Attack2ChargedIdle UMETA(DisplayName = "Attack2ChargedIdle"),
+	Attack2ChargedRelease UMETA(DisplayName = "Attack2ChargedRelease"),
+	Attack3 UMETA(DisplayName = "Attack3"),
+	Attack3ChargedWindup UMETA(DisplayName = "Attack3ChargedWindup"),
+	Attack3ChargedIdle UMETA(DisplayName = "Attack3ChargedIdle"),
+	Attack3ChargedRelease UMETA(DisplayName = "Attack3ChargedRelease"),
 };
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -68,13 +74,13 @@ public:
 	// SLASHING
 
 	UFUNCTION(BlueprintCallable, Category="Slash")
-	void StartSlash();
-
-	UFUNCTION(BlueprintCallable, Category="Slash")
 	void QueueAttack();
 
 	UFUNCTION(BlueprintCallable, Category="Slash")
 	void ReleaseAttack();
+
+	UFUNCTION(BlueprintCallable, Category="Slash")
+	void ConsumeQueuedAttack();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Slash")
 	bool AttackQueued = false;
@@ -86,20 +92,7 @@ public:
 	bool CanQueueAttack = true;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Slash")
-	EComboState ComboState = EComboState::None;
-
-	UPROPERTY(EditAnywhere, Category="Slash")
-	UAnimMontage* SlashMontage;
-
-	FOnMontageEnded OnSlashMontageEnded;
-
-	void SlashMontageEnded(UAnimMontage* Montage, bool Interrupted);
-
-	UPROPERTY(EditAnywhere, Category="Slash")
-	FName Attack2SectionName;
-
-	UPROPERTY(EditAnywhere, Category="Slash")
-	FName Attack3SectionName;
+	EComboState ComboState = EComboState::None;;
 
 	UFUNCTION(BlueprintCallable, Category="Slash")
 	void Handle_ComboWindowStart();
