@@ -76,13 +76,13 @@ void UCombatComponent::QueueAttack()
 	
 	if (GetOwner()->GetClass()->ImplementsInterface(UStatInterface::StaticClass()))
 	{
-		CanQueueAttack = (IStatInterface::Execute_GetStat(GetOwner()).Stamina > 0);
+		bool HasEnoughStamina = (IStatInterface::Execute_GetStat(GetOwner()).Stamina > 0);
+		if (!HasEnoughStamina) return;
 	}
-	
-	if (!CanQueueAttack) return;
 	
 	AttackPressed = true;
 	AttackQueued = true;
+	
 	if (ComboState == EComboState::None)
 	{
 		ComboState = EComboState::Attack1;
@@ -116,23 +116,24 @@ void UCombatComponent::Handle_ComboWindowEnd()
 	if (!AttackQueued || ComboState == EComboState::Attack3)
 	{
 		ComboState = EComboState::None;
+		AttackQueued = false;
 		CanQueueAttack = true;
 		return;
 	}
 	
 	ConsumeQueuedAttack();
-	if (AttackPressed)
-	{
-		if (ComboState == EComboState::Attack1)
-		{
-			ComboState = EComboState::Attack2ChargedWindup;
-		}
-		else if (ComboState == EComboState::Attack2)
-		{
-			ComboState = EComboState::Attack3ChargedWindup;
-		}
-	}
-	else
+	// if (AttackPressed)
+	// {
+	// 	if (ComboState == EComboState::Attack1)
+	// 	{
+	// 		ComboState = EComboState::Attack2ChargedWindup;
+	// 	}
+	// 	else if (ComboState == EComboState::Attack2)
+	// 	{
+	// 		ComboState = EComboState::Attack3ChargedWindup;
+	// 	}
+	// }
+	// else
 	{
 		if (ComboState == EComboState::Attack1)
 		{
