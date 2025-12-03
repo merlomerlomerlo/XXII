@@ -9,11 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/ABP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/ABP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/Animations/XXII_Zero_Attack_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/Animations/XXII_Zero_Attack_01.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Private/CombatComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/Public/CombatComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Public/CombatComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/NewRig/ANM_Attack_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/NewRig/ANM_Attack_01.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/NewRig/Attack_2__4_.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/NewRig/Attack_2__4_.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
