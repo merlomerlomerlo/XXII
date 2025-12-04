@@ -81,10 +81,10 @@ protected:
 
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Dash")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Sprint")
 	float SprintHoldTime;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Dash")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Sprint")
 	bool CanSprint = false;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Dash")
