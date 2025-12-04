@@ -51,6 +51,9 @@ AXXIICharacter::AXXIICharacter()
 
 	DashTimer = CreateDefaultSubobject<UTimerComponent>(TEXT("DashTimer"));
 	DashTimer->RegisterComponent();
+
+	SprintHoldTimer = CreateDefaultSubobject<UTimerComponent>(TEXT("SprintHoldTimer"));
+	SprintHoldTimer->RegisterComponent();
 }
 
 
@@ -72,6 +75,12 @@ void AXXIICharacter::BeginPlay()
 	DashTimer->OnTimerFinished.AddLambda([this]()
 	{
 		this->EndDash();
+	});
+
+	SprintHoldTimer->TimerDuration = SprintHoldTime;
+	SprintHoldTimer->OnTimerFinished.AddLambda([this]()
+	{
+		this->CanSprint = true;
 	});
 }
 
@@ -152,6 +161,17 @@ void AXXIICharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
 	StopJumping();
+}
+
+void AXXIICharacter::StartSprinting()
+{
+	SprintHoldTimer->StartTimer();
+}
+
+void AXXIICharacter::StopSprinting()
+{
+	SprintHoldTimer->StopTimer();
+	CanSprint = false;
 }
 
 void AXXIICharacter::DoDash()

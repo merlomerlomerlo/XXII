@@ -51,9 +51,6 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* SlashAction;
 
-	UPROPERTY(VisibleAnywhere, Category="Input")
-	bool NextAttackQueued = false;
-
 public:
 
 	/** Constructor */
@@ -78,7 +75,18 @@ protected:
 
 	UPROPERTY()
 	UTimerComponent* DashTimer;
+	
+	UPROPERTY()
+	UTimerComponent* SprintHoldTimer;
+
 public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Dash")
+	float SprintHoldTime;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Dash")
+	bool CanSprint = false;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Dash")
 	float DashDistance;
 
@@ -96,6 +104,12 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat")
 	UCombatComponent* CombatComponent;
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	void StartSprinting();
+
+	UFUNCTION(BlueprintCallable, Category="Input")
+	void StopSprinting();
 
 	UFUNCTION(BlueprintCallable, Category="Input")
 	void DoDash();
