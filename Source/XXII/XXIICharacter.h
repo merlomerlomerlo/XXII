@@ -136,6 +136,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoJumpEnd();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category="Events")
+	void OnDamageReceived(int Damage);
+
 public:
 
 	/** Returns CameraBoom subobject **/
