@@ -48,4 +48,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Stat|Stamina")
 	bool TryConsumeStamina(float StaminaAmount);
+	
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Stat|Stamina")
+    	float GetStepAttackConsumeStaminaAmount (int32 Step);
 };
