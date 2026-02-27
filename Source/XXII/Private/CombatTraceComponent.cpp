@@ -90,6 +90,7 @@ void UCombatTraceComponent::EndMelee()
 TArray<FHitResult> UCombatTraceComponent::SphereTrace(FVector Start, FVector End)
 {
 	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(GetOwner());
 	TArray<FHitResult> TempHits;
 		GetWorld()->SweepMultiByChannel(
 		TempHits,
@@ -100,6 +101,13 @@ TArray<FHitResult> UCombatTraceComponent::SphereTrace(FVector Start, FVector End
 		FCollisionShape::MakeSphere(SphereRadius),
 		Params
 	);
+
+	if (DebugSpheres)
+	{
+		DrawDebugSphere(GetWorld(), Start, SphereRadius, 16, FColor::Green, false, DebugLifetime);
+		DrawDebugSphere(GetWorld(), End,   SphereRadius, 16, FColor::Green,   false, DebugLifetime);
+		DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, DebugLifetime, 0, 1.f);
+	}
 
 	return TempHits;
 }

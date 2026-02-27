@@ -46,8 +46,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void EndMelee();
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category="Debug")
 	bool DebugSpheres = false;
+
+	UPROPERTY(EditAnywhere, Category="Debug")
+	float DebugLifetime = 0.5;
 
 	UPROPERTY(EditAnywhere)
 	float SphereRadius = 5.f;
