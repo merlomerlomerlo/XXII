@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "CombatComponent.h"
+#include "CombatTraceComponent.h"
 #include "HitboxInterface.h"
 #include "StatInterface.h"
 #include "GameFramework/Character.h"
@@ -104,6 +105,9 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat")
 	UCombatComponent* CombatComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat")
+	UCombatTraceComponent* CombatTraceComponent;
 
 	UFUNCTION(BlueprintCallable, Category="Input")
 	void StartSprinting();

@@ -48,12 +48,16 @@ AXXIICharacter::AXXIICharacter()
 
 	CombatComponent = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
 	CombatComponent->RegisterComponent();
+	
+	CombatTraceComponent = CreateDefaultSubobject<UCombatTraceComponent>(TEXT("CombatTraceComponent"));
+	CombatTraceComponent->RegisterComponent();
 
 	DashTimer = CreateDefaultSubobject<UTimerComponent>(TEXT("DashTimer"));
 	DashTimer->RegisterComponent();
 
 	SprintHoldTimer = CreateDefaultSubobject<UTimerComponent>(TEXT("SprintHoldTimer"));
 	SprintHoldTimer->RegisterComponent();
+
 }
 
 
