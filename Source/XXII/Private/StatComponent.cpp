@@ -45,7 +45,8 @@ void UStatComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-void UStatComponent::SetHP(float InHP)
+
+void UStatComponent::_SetHP(float InHP)
 {
 	HP = InHP;
 	if (HP <= 0)
