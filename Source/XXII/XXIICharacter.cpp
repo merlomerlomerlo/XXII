@@ -167,12 +167,12 @@ void AXXIICharacter::DoJumpEnd()
 	StopJumping();
 }
 
-void AXXIICharacter::StartSprinting()
+void AXXIICharacter::StartSprinting_Implementation()
 {
 	SprintHoldTimer->StartTimer();
 }
 
-void AXXIICharacter::StopSprinting()
+void AXXIICharacter::StopSprinting_Implementation()
 {
 	SprintHoldTimer->StopTimer();
 	CanSprint = false;

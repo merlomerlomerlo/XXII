@@ -109,10 +109,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat")
 	UCombatTraceComponent* CombatTraceComponent;
 
-	UFUNCTION(BlueprintCallable, Category="Input")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Input")
 	void StartSprinting();
 
-	UFUNCTION(BlueprintCallable, Category="Input")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Input")
 	void StopSprinting();
 
 	UFUNCTION(BlueprintCallable, Category="Input")

@@ -9,18 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Variant_Platforming/Input/IMC_Platforming.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Variant_Platforming/Input/IMC_Platforming.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Enemy/Dummy/BP_Dummy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Enemy/Dummy/BP_Dummy.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Character/BP_BaseCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Character/BP_BaseCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Character/BP_BaseEnemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Character/BP_BaseEnemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIHUD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_PlayerStatComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Stat/BP_PlayerStatComponent.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_Gameplay1.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Test/XXIITestMap_Gameplay1.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/UI/HUD/StatBar/WBP_StatBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/UI/HUD/StatBar/WBP_StatBar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/XXII/UI/HUD/WBP_InGameUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/UI/HUD/WBP_InGameUI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/Private/StatComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Private/StatComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/Public/StatComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/Public/StatComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +183,8 @@
       <workItem from="1772446386028" duration="730000" />
       <workItem from="1772447514863" duration="12439000" />
       <workItem from="1772533763227" duration="1355000" />
+      <workItem from="1772546144618" duration="1239000" />
+      <workItem from="1772583591612" duration="1672000" />
     </task>
     <servers />
   </component>
