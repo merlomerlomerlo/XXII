@@ -9,9 +9,19 @@
   <component name="ChangeListManager">
     <list default="true" id="90510304-021b-4dde-9527-8e8dbedeeb22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XXII.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Enemy/Magician/BP_ExplosiveOrb.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Enemy/Magician/BP_ExplosiveOrb.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Enemy/Magician/BP_Magician.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Enemy/Magician/BP_Magician.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/XXII/XXIICharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Character/Player/Camera/CameraModifier/BP_CameraSprintModifier.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Character/Player/Camera/CameraModifier/BP_CameraSprintModifier.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Character/BP_BaseEnemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Character/BP_BaseEnemy.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Core/Engine/BP_XXIIHUD.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_BossTest.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_BossTest.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_Dressing.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_Dressing.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_Gameplay1.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_Gameplay1.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_P.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_VFX.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/Maps/Demo/Arena/Magician/XXII_ArenaMagicianMap_VFX.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/UI/HUD/StatBar/WBP_StatBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/UI/HUD/StatBar/WBP_StatBar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/XXII/UI/HUD/WBP_InGameUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/XXII/UI/HUD/WBP_InGameUI.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +195,7 @@
       <workItem from="1772533763227" duration="1355000" />
       <workItem from="1772546144618" duration="1239000" />
       <workItem from="1772583591612" duration="1672000" />
+      <workItem from="1775571489953" duration="1030000" />
     </task>
     <servers />
   </component>
